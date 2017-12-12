@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 FILE=$1
-
-gawk -f ../lib/stage1.awk $FILE > ./stage1.dat
-gawk -f ../lib/topics1.awk ./stage1.dat > topics1.dat
+iconv -f WINDOWS-1252 -t UTF-8 $FILE > $FILE.new
+gawk -f ../lib/stage1.awk $FILE.new > ./stage1.csv
+gawk -f ../lib/topics.awk ./stage1.csv > topics.csv
+gawk -f ../lib/questions.awk ./stage1.csv > questions.csv
