@@ -2,5 +2,5 @@
 
 FILE=$1
 
-gawk -f ./stage1.awk $FILE > stage1.dat
-gawk -f ./topics.awk ./stage1.dat > topics.dat
+gawk -f ../lib/stage1.awk $FILE > ./stage1.dat
+gawk -f ../lib/topics1.awk ./stage1.dat > topics1.dat
